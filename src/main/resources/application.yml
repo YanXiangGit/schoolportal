@@ -1,0 +1,16 @@
+server:
+  port: 8080
+spring:
+  mvc:
+    view:
+      # 页面默认前缀目录
+      prefix: /WEB-INF/jsp/
+      # 响应页面默认后缀
+      suffix: .jsp
+  datasource:
+    url: jdbc:mysql://localhost:3306/xjtmgcxy
+    username: root
+    password: root
+mybatis:
+  config-location:
+    classpath: mybatis-config.xml
