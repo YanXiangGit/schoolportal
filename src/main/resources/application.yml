@@ -1,12 +1,22 @@
 server:
   port: 8080
+  context-path: /schoolportal
+  tomcat:
+    uri-encoding: UTF-8
 spring:
   mvc:
     view:
-      # 页面默认前缀目录
       prefix: /WEB-INF/jsp/
-      # 响应页面默认后缀
       suffix: .jsp
+  http:
+    encoding:
+      charset: UTF-8
+      force: true
+      enabled: true
+    resources:
+      static-locations: classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/,classpath:/public/
+  application:
+    name: schoolportal # 鏈嶅姟鍚嶇О
   datasource:
     url: jdbc:mysql://localhost:3306/xjtmgcxy
     username: root

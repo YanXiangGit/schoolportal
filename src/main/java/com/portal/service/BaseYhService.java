@@ -15,8 +15,8 @@ public class BaseYhService {
         baseYhDao.insertUser(baseYh);
     };
 
-    public BaseYh queryByYhbh(String yhbh){
-        return baseYhDao.queryByYhbh(yhbh);
+    public BaseYh queryByDlmcAndMm(String dlmc,String mm){
+        return baseYhDao.queryByDlmcAndMm(dlmc,mm);
     };
 
 
