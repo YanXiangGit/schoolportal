@@ -3,7 +3,7 @@ package com.portal.model;
 
 public class BaseXtgn implements java.io.Serializable{
 
-  private String gxxbh;
+  private String gnxbh;
   private String gnxmc;
   private Integer px;
   private String url;
@@ -16,11 +16,11 @@ public class BaseXtgn implements java.io.Serializable{
 
 
   public String getGnxbh() {
-    return gxxbh;
+    return gnxbh;
   }
 
-  public void setGnxbh(String gxxbh) {
-    this.gxxbh = gxxbh;
+  public void setGnxbh(String gnxbh) {
+    this.gnxbh = gnxbh;
   }
 
 
