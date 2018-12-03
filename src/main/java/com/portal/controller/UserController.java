@@ -30,7 +30,7 @@ public class UserController {
     }
 
     @RequestMapping(value = {"/login"})
-    public String view(HttpServletRequest request, HttpSession session, String dlmc, String mm) {
+    public String login(HttpServletRequest request, HttpSession session, String dlmc, String mm) {
         if (Utils.isNotEmpty(dlmc) && Utils.isNotEmpty(mm)) {
             BaseYh baseYh = baseYhService.queryByDlmcAndMm(dlmc, mm);
             if (baseYh != null) {
