@@ -26,13 +26,13 @@
     <div class="myapp-login-logo-block  tpl-login-max">
         <div class="myapp-login-logo-text">
             <div class="myapp-login-logo-text">
-                <span>土木工程学院网站后台系统</span><i class="am-icon-skyatlas"></i>
+                <%--<span>土木工程学院网站后台系统</span><i class="am-icon-skyatlas"></i>--%>
             </div>
         </div>
         <div class="login-font">
         </div>
         <div class="am-u-sm-10 login-am-center">
-            <form class="am-form" action="/login" method="post">
+            <form class="am-form" action="login" method="post">
                 <fieldset>
                     <div class="am-form-group">
                         <input type="text" name="dlmc" class="" id="doc-ipt-email-1" placeholder="请输入账号">
