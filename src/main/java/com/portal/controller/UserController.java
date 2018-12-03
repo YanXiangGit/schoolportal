@@ -42,8 +42,8 @@ public class UserController {
                 String firstgnxbh = "";
                 String firstgnxurl = "";
                 if (Utils.isNotEmpty(firstList)) {
-                    firstgnxbh = "" + firstList.get(0).get("GNXBH");
-                    firstgnxurl = "" + firstList.get(0).get("URL");
+                    firstgnxbh = "" + firstList.get(0).get("gnxbh");
+                    firstgnxurl = "" + firstList.get(0).get("url");
                 }
                 List<Map> list = baseXtgnService.queryFirstXtgnListByYhbhAndGnxbh(baseYh.getYhbh(), firstgnxbh);
                 createXtgnList(baseXtgns, basextgn, list);
