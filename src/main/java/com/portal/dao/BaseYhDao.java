@@ -5,8 +5,10 @@ import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
+import org.springframework.stereotype.Repository;
 
 @Mapper
+@Repository("BaseYhDao")
 public interface BaseYhDao {
     String TABLE_NAEM = "base_yh";
     String INSERT_FIELDS = "dlmc,yhmc,yhlx,mm,bmbm,bmmc,sfzmhm,sjhm,lxdh,dzyx,yhzt,bz,gxsj,gxr";
@@ -17,7 +19,6 @@ public interface BaseYhDao {
 
     @Select({"select", SELECT_FIELDS, "from", TABLE_NAEM, "where dlmc=#{0} and mm=#{1}"})
     public BaseYh queryByDlmcAndMm(String dlmc,String mm);
-
 
     @Delete({"delete from", TABLE_NAEM, "where yhbh=#{id}"})
     public void deleteById(int id);
