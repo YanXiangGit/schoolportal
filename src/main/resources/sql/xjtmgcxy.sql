@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50528
 File Encoding         : 65001
 
-Date: 2018-12-03 15:44:06
+Date: 2018-12-03 17:31:35
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -30,6 +30,7 @@ CREATE TABLE `base_jsdy` (
 -- ----------------------------
 -- Records of base_jsdy
 -- ----------------------------
+INSERT INTO `base_jsdy` VALUES ('1001', '系统管理员', '2018-12-03', '系统管理员');
 
 -- ----------------------------
 -- Table structure for base_jsgn
@@ -44,13 +45,16 @@ CREATE TABLE `base_jsgn` (
 -- ----------------------------
 -- Records of base_jsgn
 -- ----------------------------
+INSERT INTO `base_jsgn` VALUES ('1001', 'XTGL', '2018-12-03');
+INSERT INTO `base_jsgn` VALUES ('1001', 'XTGL01', '2018-12-03');
+INSERT INTO `base_jsgn` VALUES ('1001', 'XTGL02', '2018-12-03');
 
 -- ----------------------------
 -- Table structure for base_xtgn
 -- ----------------------------
 DROP TABLE IF EXISTS `base_xtgn`;
 CREATE TABLE `base_xtgn` (
-  `gxxbh` varchar(255) NOT NULL,
+  `gnxbh` varchar(255) NOT NULL,
   `gnxmc` varchar(255) DEFAULT NULL,
   `px` int(255) DEFAULT NULL,
   `url` varchar(255) DEFAULT NULL,
@@ -60,12 +64,15 @@ CREATE TABLE `base_xtgn` (
   `zt` varchar(1) DEFAULT NULL,
   `bz` varchar(255) DEFAULT NULL,
   `gxsj` date DEFAULT NULL,
-  PRIMARY KEY (`gxxbh`) USING BTREE
+  PRIMARY KEY (`gnxbh`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
 
 -- ----------------------------
 -- Records of base_xtgn
 -- ----------------------------
+INSERT INTO `base_xtgn` VALUES ('XTGL', '系统管理', '1', ' ', null, '1', null, '1', null, '2018-12-03');
+INSERT INTO `base_xtgn` VALUES ('XTGL01', '用户管理', '1', ' ', 'XTGL', '2', null, '1', null, '2018-12-03');
+INSERT INTO `base_xtgn` VALUES ('XTGL02', '用户管理', '2', ' ', 'XTGL', '2', '', '1', '', '2018-12-03');
 
 -- ----------------------------
 -- Table structure for base_yh
@@ -93,4 +100,19 @@ CREATE TABLE `base_yh` (
 -- ----------------------------
 -- Records of base_yh
 -- ----------------------------
-INSERT INTO `base_yh` VALUES ('1', 'admin', '管理员', '1', 'admin', '00', null, null, null, null, null, null, null, null, null);
+INSERT INTO `base_yh` VALUES ('1001', 'admin', '管理员', '1', 'admin', '00', null, null, null, null, null, null, null, null, null);
+
+-- ----------------------------
+-- Table structure for base_yhqx
+-- ----------------------------
+DROP TABLE IF EXISTS `base_yhqx`;
+CREATE TABLE `base_yhqx` (
+  `yhbh` varchar(255) DEFAULT NULL,
+  `jsbh` varchar(255) DEFAULT NULL,
+  `gxsj` date DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of base_yhqx
+-- ----------------------------
+INSERT INTO `base_yhqx` VALUES ('1001', '1001', '2018-12-03');

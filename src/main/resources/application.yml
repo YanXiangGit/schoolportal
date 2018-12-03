@@ -46,3 +46,7 @@ spring:
 mybatis:
   config-location:
     classpath: mybatis-config.xml
+# 打印sql
+logging:
+  level:
+     com.portal.dao : debug

@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -45,7 +46,10 @@ public class UserController {
                     firstgnxbh = "" + firstList.get(0).get("gnxbh");
                     firstgnxurl = "" + firstList.get(0).get("url");
                 }
-                List<Map> list = baseXtgnService.queryFirstXtgnListByYhbhAndGnxbh(baseYh.getYhbh(), firstgnxbh);
+                Map map = new HashMap();
+                map.put("yhbh",baseYh.getYhbh());
+                map.put("gnxbh",firstgnxbh);
+                List<Map> list = baseXtgnService.queryFirstXtgnListByYhbhAndGnxbh(map);
                 createXtgnList(baseXtgns, basextgn, list);
                 session.setAttribute("firstList", firstList);
                 session.setAttribute("baseYh", baseYh);
@@ -64,16 +68,16 @@ public class UserController {
             for (int i = 0; i < list.size(); i++) {
                 Map map = list.get(i);
                 BaseXtgn carryXtgn = new BaseXtgn();
-                carryXtgn.setGnxbh(""+map.get("GNXBH"));
-                carryXtgn.setGnxmc(""+map.get("GNXMC"));
-                carryXtgn.setPx(Integer.parseInt(""+map.get("PX")) );
-                carryXtgn.setUrl(""+map.get("URL"));
-                carryXtgn.setSjgnbh(""+map.get("SJGNBH"));
-                carryXtgn.setCdjb(Integer.parseInt(""+map.get("CDJB")));
-                carryXtgn.setTp(""+map.get("TP"));
-                carryXtgn.setBz(""+map.get("BZ"));
-                carryXtgn.setZt(""+map.get("ZT"));
-                if("2".equals(map.get("CDJB").toString().trim())){
+                carryXtgn.setGnxbh(""+map.get("gnxbh"));
+                carryXtgn.setGnxmc(""+map.get("gnxmc"));
+                carryXtgn.setPx(Integer.parseInt(""+map.get("px")) );
+                carryXtgn.setUrl(""+map.get("url"));
+                carryXtgn.setSjgnbh(""+map.get("sjgnbh"));
+                carryXtgn.setCdjb(Integer.parseInt(""+map.get("cdjb")));
+                carryXtgn.setTp(""+map.get("tp"));
+                carryXtgn.setBz(""+map.get("bz"));
+                carryXtgn.setZt(""+map.get("zt"));
+                if("2".equals(map.get("cdjb").toString().trim())){
                     carryxtgn.add(carryXtgn);
                 }else{
                     basextgn.add(carryXtgn);

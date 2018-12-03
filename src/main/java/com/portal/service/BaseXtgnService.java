@@ -18,7 +18,7 @@ public class BaseXtgnService {
         return baseXtgnDao.queryFirstXtgnListByYhbh(yhbh);
     };
 
-    public List<Map> queryFirstXtgnListByYhbhAndGnxbh(String yhbh,String gnxbh){
-        return baseXtgnDao.queryFirstXtgnListByYhbhAndGnxbh(yhbh,gnxbh);
+    public List<Map> queryFirstXtgnListByYhbhAndGnxbh(Map map){
+        return baseXtgnDao.queryFirstXtgnListByYhbhAndGnxbh(map);
     };
 }
